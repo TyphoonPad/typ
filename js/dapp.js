@@ -196,7 +196,7 @@ async function getMarketCap() {
     Promise.all([
         fetch('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x367DefBB3996a6b1A6b8cCe2c900e3948BfA7757&apikey=YBYQ66DDHEZIURYRX4QMZRJ6RGIMISU1NM'),
         fetch('https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress=0x367DefBB3996a6b1A6b8cCe2c900e3948BfA7757&address=0x4D69f806EA93222474cd82750BCcCB5ecBcb5A7b&tag=latest&apikey=CQMXE3Z94YNSY2HMF6IJVTVWMW5Z9DCH9A'),
-        fetch('https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&address=0x690Dd96cf30B4B0773F763dd7627F7C365C57BdF&tag=latest&apikey=CQMXE3Z94YNSY2HMF6IJVTVWMW5Z9DCH9A'),
+        fetch('https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&address=0x5c08963E306F01A1159398081D3D3185E1d5e89F&tag=latest&apikey=CQMXE3Z94YNSY2HMF6IJVTVWMW5Z9DCH9A'),
         fetch('https://api.pancakeswap.info/api/v2/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'),
         fetch('https://api.bscscan.com/api?module=account&action=balancemulti&address=0x0fa39Ea67Fa2bFF4d3581c1EE83269fdA6C422a1,0x9c5345a3C7B5fab558eE1ed2779D3c3d3942C639&tag=latest&apikey=CQMXE3Z94YNSY2HMF6IJVTVWMW5Z9DCH9A'),
         fetch('js/data/busdTreasury.json'),
