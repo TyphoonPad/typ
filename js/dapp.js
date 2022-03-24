@@ -3,11 +3,11 @@ var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 //import data from "../data.json" assert { type: "json" };
 
 const json_dati = '[{"tokenAddress": "0x367DefBB3996a6b1A6b8cCe2c900e3948BfA7757","decimals" : 5,"reward" : 0.00023619273,"utcTime": "1 Jan 2022 00:00:00 UTC","apiKey": "CQMXE3Z94YNSY2HMF6IJVTVWMW5Z9DCH9A"}]';
-const firePitAddress = '0xaA32C984AfDfa6B95e88B8aB7faBfa65De89b98C';
+const firePitAddress = '0xd825c5d4eb3bacc0ea8f72d1487787eb8825476c';
 const wbnbAddress = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
-const liquidityAddress = '0xf5D9b8947b11DdF5eE33374cC2865E775EBE00Dc';
-const treasuryAddress = '0xa9c6d0cc785569b450393A69599E97fAED5D9dd9';
-const insuranceAddress = '0x082D0FbCA3D80b2d4A05E20bFc227523bE8EFEF3';
+const liquidityAddress = '0x5c08963E306F01A1159398081D3D3185E1d5e89F';
+const treasuryAddress = '0xA1D5b5D09c445b4295AD60a7083BAF602Fb3E25b';
+const insuranceAddress = '0x32A0D3a1Bf008acad5308BD5b04646c9A76780C3';
 
 const data = JSON.parse(json_dati);
 const regex = /^0x[a-fA-F0-9]{40}$/;
@@ -185,7 +185,7 @@ window.addEventListener('load', async () => {
 });
 
 async function getMarketCap() {    
-    const tokenPrice = await fetch("https://api.pancakeswap.info/api/v2/tokens/0x84952dd90cdc57170b13d2291a8afcedc8f97c71");
+    const tokenPrice = await fetch("https://api.pancakeswap.info/api/v2/tokens/0x367DefBB3996a6b1A6b8cCe2c900e3948BfA7757");
     const priceJson = await tokenPrice.json();
     price = priceJson.data.price;
 
@@ -194,8 +194,8 @@ async function getMarketCap() {
     document.getElementById("price3").innerHTML = "$" + Number(priceJson.data.price).toFixed(3);
     document.getElementById("input_price").value = Number(priceJson.data.price).toFixed(2);
     Promise.all([
-        fetch('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x84952dd90cdc57170b13d2291a8afcedc8f97c71&apikey=YBYQ66DDHEZIURYRX4QMZRJ6RGIMISU1NM'),
-        fetch('https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress=0x84952dd90cdC57170b13D2291A8afCEdC8F97c71&address=0x4D69f806EA93222474cd82750BCcCB5ecBcb5A7b&tag=latest&apikey=CQMXE3Z94YNSY2HMF6IJVTVWMW5Z9DCH9A'),
+        fetch('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x367DefBB3996a6b1A6b8cCe2c900e3948BfA7757&apikey=YBYQ66DDHEZIURYRX4QMZRJ6RGIMISU1NM'),
+        fetch('https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress=0x367DefBB3996a6b1A6b8cCe2c900e3948BfA7757&address=0x4D69f806EA93222474cd82750BCcCB5ecBcb5A7b&tag=latest&apikey=CQMXE3Z94YNSY2HMF6IJVTVWMW5Z9DCH9A'),
         fetch('https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress=0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c&address=0x690Dd96cf30B4B0773F763dd7627F7C365C57BdF&tag=latest&apikey=CQMXE3Z94YNSY2HMF6IJVTVWMW5Z9DCH9A'),
         fetch('https://api.pancakeswap.info/api/v2/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'),
         fetch('https://api.bscscan.com/api?module=account&action=balancemulti&address=0x0fa39Ea67Fa2bFF4d3581c1EE83269fdA6C422a1,0x9c5345a3C7B5fab558eE1ed2779D3c3d3942C639&tag=latest&apikey=CQMXE3Z94YNSY2HMF6IJVTVWMW5Z9DCH9A'),
